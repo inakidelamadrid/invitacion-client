@@ -7,7 +7,7 @@ import InviteeList from './components/page/InviteeList'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container mx-auto px-4 py-2">
       <Switch>
         <Route exact path="/">
           <header className="App-header">
@@ -25,9 +25,15 @@ function App() {
             </a>
           </header>
         </Route>
-        <Route path="/invitees">
-          <InviteeList />
-        </Route>
+        <Route
+          path="/invitees"
+          render={props => (
+            <InviteeList
+              {...props}
+              data={[{ name: 'Teresa' }, { name: 'Mara' }, { name: 'Loren' }]}
+            />
+          )}
+        />
       </Switch>
     </div>
   )
