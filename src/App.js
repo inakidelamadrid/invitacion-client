@@ -26,16 +26,8 @@ function App() {
             </a>
           </header>
         </Route>
-        <Route
-          path="/invitees"
-          render={props => (
-            <InviteeList
-              {...props}
-              data={[{ name: 'Teresa' }, { name: 'Mara' }, { name: 'Loren' }]}
-            />
-          )}
-        />
-        <Route path="/createInvite" component={InviteeForm}/>
+        <Route path="/invitees" component={InviteeList} />
+        <Route path="/createInvite" component={InviteeForm} />
       </Switch>
     </div>
   )
