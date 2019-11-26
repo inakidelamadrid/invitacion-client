@@ -1,7 +1,7 @@
 const initial = [
-  { name: 'Teresa', lastName: 'Cruz', facebookPath: 'tere.cruz' },
-  { name: 'Mara', lastName: 'De La Madrid', facebookPath: 'loren.cernas' },
-  { name: 'Loren', lastName: 'Cernas', facebookPath: 'fabiola.delamadrid' },
+  { name: 'Teresa', lastName: 'Cruz', facebookPath: 'tere.cruz', inviteState: 'notsent' },
+  { name: 'Mara', lastName: 'De La Madrid', facebookPath: 'loren.cernas', inviteState: 'notsent' },
+  { name: 'Loren', lastName: 'Cernas', facebookPath: 'fabiola.delamadrid', inviteState: 'notsent' },
 ]
 
 const inviteesReducer = (state = initial, action) => {

@@ -3,8 +3,11 @@ import styles from './styles.module.scss'
 
 const Invitee = ({ invitee }) => {
   const inviteState = {
-    notsent: 'not sent yet',
-    pending: 'pending',
+    notsent: 'Invitacion no enviada',
+    pending: 'Invitacion enviada',
+    accepted: 'Si ire',
+    rejected: 'No puedo ir',
+    maybe: 'Tal vez ire',
   }
 
   return (
@@ -12,7 +15,7 @@ const Invitee = ({ invitee }) => {
       <td>{invitee.name}</td>
       <td>{invitee.lastName}</td>
       <td>{invitee.facebookPath}</td>
-      <td>Invite {inviteState.pending}| copy invite</td>
+      <td>{inviteState[invitee.inviteState]}| copy invite</td>
       <td>Generate invite link </td>
     </tr>
   )
