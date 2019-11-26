@@ -1,18 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import InviteeList from '../../display/InviteeList'
+import InviteeForm from '../../display/InviteeForm'
+import { addInvitee } from '../../../actions/invitees'
 
-const Invitee = ({ name }) => {
-  return <div className="">{name}</div>
-}
-const InviteeList = ({ data }) => {
+const InviteeListPage = props => {
   const invitees = useSelector(state => state.invitees)
   return (
-    <div className="inviteesListWrapper">
-      <h1> Invitados </h1>
-      {invitees.map((invitee, index) => (
-        <Invitee key={index} name={invitee.name} />
-      ))}
-    </div>
+    <>
+      <InviteeList invitees={invitees} />
+      <InviteeForm addInvitee={addInvitee}/>
+    </>
   )
 }
-export default InviteeList
+export default InviteeListPage
