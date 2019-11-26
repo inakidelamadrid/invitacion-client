@@ -26,7 +26,6 @@ const InviteeForm = ({ addInvitee }) => {
         <label htmlFor="">Nombre</label>
         <input
           onChange={updateName}
-          className="border border-gray-300"
           type="text"
           name="name"
           value={name}
@@ -36,17 +35,15 @@ const InviteeForm = ({ addInvitee }) => {
         <label htmlFor="">Apellido</label>
         <input
           onChange={updateLastName}
-          className="border border-gray-300"
           type="text"
           name="lastname"
           value={lastName}
         />
       </div>
       <div className={styles.formGroup}>
-        <label htmlFor="">Facebook Profile</label>
+        <label htmlFor="">Facebook</label>
         <input
           onChange={updateFacebookPath}
-          className="border border-gray-300"
           type="text"
           name="facebookPath"
           value={facebookPath}

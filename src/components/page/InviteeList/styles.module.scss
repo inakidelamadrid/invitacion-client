@@ -1,0 +1,10 @@
+.page{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inviteeList{
+  flex-grow: 2;
+  padding: 0 10px 0 20px;
+}
