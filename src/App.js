@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router'
 import logo from './logo.svg'
 import './App.css'
 
+import InviteeForm from './components/page/InviteeForm'
 import InviteeList from './components/page/InviteeList'
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             />
           )}
         />
+        <Route path="/createInvite" component={InviteeForm}/>
       </Switch>
     </div>
   )
