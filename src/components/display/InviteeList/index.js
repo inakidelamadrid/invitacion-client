@@ -1,5 +1,8 @@
 import React from 'react'
 import styles from './styles.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClipboard, faCogs } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 const Invitee = ({ invitee }) => {
   const inviteState = {
@@ -10,13 +13,25 @@ const Invitee = ({ invitee }) => {
     maybe: 'Tal vez ire',
   }
 
+  const fbIcon =
+    invitee.facebookPath.length > 0 ? (
+      <>
+        <FontAwesomeIcon icon={faFacebook} />
+        &nbsp;
+      </>
+    ) : (
+      ''
+    )
   return (
     <tr>
       <td>{invitee.name}</td>
       <td>{invitee.lastName}</td>
-      <td>{invitee.facebookPath}</td>
-      <td>{inviteState[invitee.inviteState]}| copy invite</td>
-      <td>Generate invite link </td>
+      <td>
+        {fbIcon}
+        {invitee.facebookPath}
+      </td>
+      <td>{inviteState[invitee.inviteState]}</td>
+      <td className={styles.cogsColumn}><FontAwesomeIcon icon={faCogs} /> | <FontAwesomeIcon icon={faClipboard} /></td>
     </tr>
   )
 }
@@ -27,11 +42,13 @@ const InviteeList = ({ invitees }) => {
       <h1> Invitados </h1>
       <table className={styles.inviteeTable}>
         <thead>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Facebook</th>
-          <th>Estado de invitacion</th>
-          <th>Link de invitacion</th>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Facebook</th>
+            <th>Estado de invitacion</th>
+            <th>Link de invitacion</th>
+          </tr>
         </thead>
         <tbody>
           {invitees.map((invitee, index) => (
