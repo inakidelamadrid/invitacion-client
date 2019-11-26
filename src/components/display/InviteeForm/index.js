@@ -11,6 +11,9 @@ const InviteeForm = ({ addInvitee }) => {
   const invite = evt => {
     const invitee = { name, lastName, facebookPath }
     dispatch(addInvitee(invitee))
+    setFacebooPath("")
+    setName("")
+    setLastName("")
   }
 
   const updateFacebookPath = evt => setFacebooPath(evt.target.value)
@@ -26,6 +29,7 @@ const InviteeForm = ({ addInvitee }) => {
           className="border border-gray-300"
           type="text"
           name="name"
+          value={name}
         />
       </div>
       <div className={styles.formGroup}>
@@ -35,6 +39,7 @@ const InviteeForm = ({ addInvitee }) => {
           className="border border-gray-300"
           type="text"
           name="lastname"
+          value={lastName}
         />
       </div>
       <div className={styles.formGroup}>
@@ -44,6 +49,7 @@ const InviteeForm = ({ addInvitee }) => {
           className="border border-gray-300"
           type="text"
           name="facebookPath"
+          value={facebookPath}
         />
       </div>
       <div className={styles.formGroup}>
