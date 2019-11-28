@@ -14,7 +14,7 @@ const Invitee = ({ invitee }) => {
   }
 
   const fbIcon =
-    invitee.facebookPath.length > 0 ? (
+    invitee.facebook_path.length > 0 ? (
       <>
         <FontAwesomeIcon icon={faFacebook} />
         &nbsp;
@@ -25,18 +25,19 @@ const Invitee = ({ invitee }) => {
   return (
     <tr>
       <td>{invitee.name}</td>
-      <td>{invitee.lastName}</td>
+      <td>{invitee.last_name}</td>
       <td>
         {fbIcon}
-        {invitee.facebookPath}
+        {invitee.facebook_path}
       </td>
-      <td>{inviteState[invitee.inviteState]}</td>
+      <td>{inviteState[invitee.invite_state]}</td>
       <td className={styles.cogsColumn}><FontAwesomeIcon icon={faCogs} /> | <FontAwesomeIcon icon={faClipboard} /></td>
     </tr>
   )
 }
 
 const InviteeList = ({ invitees }) => {
+
   return (
     <div className="inviteesListWrapper">
       <h1> Invitados </h1>
