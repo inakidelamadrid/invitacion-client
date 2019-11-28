@@ -14,3 +14,9 @@ export const createInvitee = invitee => {
     name,
   })
 }
+
+export const createEvite = inviteeId => {
+  return request.post(fullURI('/e_vites/')).send({
+    invitee_id: inviteeId,
+  })
+}
