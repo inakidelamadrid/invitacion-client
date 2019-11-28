@@ -1,10 +1,13 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import styles from './styles.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard, faCogs } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import appThunks from '../../../appThunks'
 
 const Invitee = ({ invitee }) => {
+  const dispatch = useDispatch()
   const inviteState = {
     notsent: 'Invitacion no enviada',
     pending: 'Invitacion enviada',
@@ -13,13 +16,12 @@ const Invitee = ({ invitee }) => {
     maybe: 'Tal vez ire',
   }
 
-  const code = invitee.invite && invitee.invite.code
+  const code = invitee.e_vite && invitee.e_vite.code
 
   const createInviteCode = () => {
-    //const id = invitee.id
-    // dispatch createInviteAndGenerateCode
-    alert('Will create invite for Invitee ' + invitee.id)
+    dispatch(appThunks.createEvite(invitee.id))
   }
+
   const fbIcon =
     invitee.facebook_path.length > 0 ? (
       <>
