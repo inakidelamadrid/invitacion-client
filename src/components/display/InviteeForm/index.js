@@ -4,19 +4,17 @@ import styles from './styles.module.scss'
 
 const InviteeForm = ({ addInvitee }) => {
   const dispatch = useDispatch()
-  const [facebookPath, setFacebooPath] = useState('')
+  const [facebookPath, setFacebookPath] = useState('')
   const [name, setName] = useState('')
   const [lastName, setLastName] = useState('')
 
   const invite = evt => {
     const invitee = { name, lastName, facebookPath, inviteState: 'notsent' }
     dispatch(addInvitee(invitee))
-    setFacebooPath("")
-    setName("")
-    setLastName("")
+    resetValues()
   }
 
-  const updateFacebookPath = evt => setFacebooPath(evt.target.value)
+  const updateFacebookPath = evt => setFacebookPath(evt.target.value)
   const updateName = evt => setName(evt.target.value)
   const updateLastName = evt => setLastName(evt.target.value)
 
@@ -24,12 +22,7 @@ const InviteeForm = ({ addInvitee }) => {
     <div>
       <div className={styles.formGroup}>
         <label htmlFor="">Nombre</label>
-        <input
-          onChange={updateName}
-          type="text"
-          name="name"
-          value={name}
-        />
+        <input onChange={updateName} type="text" name="name" value={name} />
       </div>
       <div className={styles.formGroup}>
         <label htmlFor="">Apellido</label>
@@ -54,6 +47,12 @@ const InviteeForm = ({ addInvitee }) => {
       </div>
     </div>
   )
+
+  function resetValues() {
+    setFacebookPath('')
+    setName('')
+    setLastName('')
+  }
 }
 
 export default InviteeForm

@@ -11,7 +11,12 @@ export const loadInvitees = () => dispatch => {
 }
 
 export const createInvitee = invitee => dispatch => {
-  apiCreateInvitee(invitee).then(res => {
+  const body = {
+    name: invitee.name,
+    last_name: invitee.lastName,
+    facebook_path: invitee.facebookPath,
+  }
+  apiCreateInvitee(body).then(res => {
     const invitee = res.body
     dispatch({ type: 'APPEND_INVITEE', payload: { invitee } })
   })

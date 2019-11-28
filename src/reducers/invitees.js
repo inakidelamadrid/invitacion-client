@@ -1,8 +1,7 @@
 const inviteesReducer = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_INVITEE':
-      const newState = [...state, action.payload.invitee]
-      return newState
+    case 'APPEND_INVITEE':
+      return [...state, action.payload.invitee]
     case 'LOAD_INVITEES':
       return action.payload.invitees
     default:

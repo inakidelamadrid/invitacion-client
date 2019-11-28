@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import appThunks from '../../../appThunks'
 import InviteeList from '../../display/InviteeList'
 import InviteeForm from '../../display/InviteeForm'
-import { addInvitee } from '../../../actions/invitees'
 import styles from './styles.module.scss'
 
 const InviteeListPage = props => {
@@ -18,7 +17,7 @@ const InviteeListPage = props => {
   return (
     <div className={styles.page}>
       <div>
-        <InviteeForm addInvitee={addInvitee} />
+        <InviteeForm addInvitee={appThunks.createInvitee} />
       </div>
       <div className={styles.inviteeList}>
         {isEmpty(invitees) ? (
