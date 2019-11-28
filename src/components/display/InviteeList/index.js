@@ -31,13 +31,19 @@ const Invitee = ({ invitee }) => {
         {invitee.facebook_path}
       </td>
       <td>{inviteState[invitee.invite_state]}</td>
-      <td className={styles.cogsColumn}><FontAwesomeIcon icon={faCogs} /> | <FontAwesomeIcon icon={faClipboard} /></td>
+      <td className={styles.cogsColumn}>
+        <button className={styles.inviteeActionBtn}>
+          <FontAwesomeIcon icon={faCogs} />
+        </button>{' '}
+        <button className={styles.inviteeActionBtn}>
+          <FontAwesomeIcon icon={faClipboard} />
+        </button>
+      </td>
     </tr>
   )
 }
 
 const InviteeList = ({ invitees }) => {
-
   return (
     <div className="inviteesListWrapper">
       <h1> Invitados </h1>
@@ -48,7 +54,7 @@ const InviteeList = ({ invitees }) => {
             <th>Apellido</th>
             <th>Facebook</th>
             <th>Estado de invitacion</th>
-            <th>Link de invitacion</th>
+            <th className={styles.cogsColumn}>Link de invitacion</th>
           </tr>
         </thead>
         <tbody>

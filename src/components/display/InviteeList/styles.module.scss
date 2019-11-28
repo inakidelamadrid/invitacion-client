@@ -9,3 +9,13 @@
 .cogsColumn{
   text-align: center;
 }
+
+
+.inviteeActionBtn{
+  min-width: 40px;
+  background-color: #5e5768;
+  border-radius: 5px;
+  svg path{
+    fill: #fff;
+  }
+}
