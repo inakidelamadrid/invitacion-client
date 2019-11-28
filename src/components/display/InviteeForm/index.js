@@ -9,7 +9,7 @@ const InviteeForm = ({ addInvitee }) => {
   const [lastName, setLastName] = useState('')
 
   const invite = evt => {
-    const invitee = { name, lastName, facebookPath }
+    const invitee = { name, lastName, facebookPath, inviteState: 'notsent' }
     dispatch(addInvitee(invitee))
     setFacebooPath("")
     setName("")
