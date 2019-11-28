@@ -13,6 +13,13 @@ const Invitee = ({ invitee }) => {
     maybe: 'Tal vez ire',
   }
 
+  const code = invitee.invite && invitee.invite.code
+
+  const createInviteCode = () => {
+    //const id = invitee.id
+    // dispatch createInviteAndGenerateCode
+    alert('Will create invite for Invitee ' + invitee.id)
+  }
   const fbIcon =
     invitee.facebook_path.length > 0 ? (
       <>
@@ -32,12 +39,16 @@ const Invitee = ({ invitee }) => {
       </td>
       <td>{inviteState[invitee.invite_state]}</td>
       <td className={styles.cogsColumn}>
-        <button className={styles.inviteeActionBtn}>
+        <button className={styles.inviteeActionBtn} onClick={createInviteCode}>
           <FontAwesomeIcon icon={faCogs} />
         </button>{' '}
-        <button className={styles.inviteeActionBtn}>
-          <FontAwesomeIcon icon={faClipboard} />
-        </button>
+        {code ? (
+          <button className={styles.inviteeActionBtn}>
+            <FontAwesomeIcon icon={faClipboard} />
+          </button>
+        ) : (
+          ''
+        )}
       </td>
     </tr>
   )
