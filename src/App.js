@@ -5,6 +5,7 @@ import './App.css'
 
 import InviteeForm from './components/page/InviteeForm'
 import InviteeList from './components/page/InviteeList'
+import InvitePreview from './components/page/InvitePreview'
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
             </a>
           </header>
         </Route>
-        <Route path="/invitees" component={InviteeList} />
+        <Route exact path="/invitees" component={InviteeList} />
+        <Route path="/invitees/preview/:code" component={InvitePreview} />
         <Route path="/createInvite" component={InviteeForm} />
       </Switch>
     </div>

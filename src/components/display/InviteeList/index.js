@@ -45,9 +45,12 @@ const Invitee = ({ invitee }) => {
           <FontAwesomeIcon icon={faCogs} />
         </button>{' '}
         {code ? (
-          <button className={styles.inviteeActionBtn}>
-            <FontAwesomeIcon icon={faClipboard} />
-          </button>
+          <>
+            <button className={styles.inviteeActionBtn}>
+              <FontAwesomeIcon icon={faClipboard} />
+            </button>
+            <a href={`/invitees/preview/${code}`}>Vista previa</a>
+          </>
         ) : (
           ''
         )}
