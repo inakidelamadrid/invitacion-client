@@ -1,4 +1,4 @@
-const addEviteToInvitee = invitee => {
+export const addEviteToInvitee = invitee => {
   const { code, facebook_path, id, last_name, name, status } = invitee
 
   return { facebook_path, id, last_name, name, e_vite: { code, status } }
