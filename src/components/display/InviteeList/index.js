@@ -39,7 +39,7 @@ const Invitee = ({ invitee }) => {
         {fbIcon}
         {invitee.facebook_path}
       </td>
-      <td>{inviteState[invitee.invite_state]}</td>
+      <td>{inviteState[invitee.e_vite.status]}</td>
       <td className={styles.cogsColumn}>
         <button className={styles.inviteeActionBtn} onClick={createInviteCode}>
           <FontAwesomeIcon icon={faCogs} />
