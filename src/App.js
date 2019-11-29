@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router'
 import logo from './logo.svg'
 import './App.css'
 
+import InviteDesign from './components/page/InviteDesign'
 import InviteeForm from './components/page/InviteeForm'
 import InviteeList from './components/page/InviteeList'
 import InvitePreview from './components/page/InvitePreview'
@@ -28,6 +29,7 @@ function App() {
           </header>
         </Route>
         <Route exact path="/invitees" component={InviteeList} />
+        <Route path="/invite/design" component={InviteDesign} />
         <Route path="/invitees/preview/:code" component={InvitePreview} />
         <Route path="/createInvite" component={InviteeForm} />
       </Switch>
