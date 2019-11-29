@@ -20,3 +20,7 @@ export const createEvite = inviteeId => {
     invitee_id: inviteeId,
   })
 }
+
+export const loadInvitee = eviteCode => {
+  request.get(fullURI(`/invitees/usecode/${eviteCode}`))
+}
