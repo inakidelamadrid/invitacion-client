@@ -1,7 +1,7 @@
 const addEviteToInvitee = invitee => {
-  const { code, facebook_path, last_name, name, status } = invitee
+  const { code, facebook_path, id, last_name, name, status } = invitee
 
-  return { facebook_path, last_name, name, e_vite: { code, status } }
+  return { facebook_path, id, last_name, name, e_vite: { code, status } }
 }
 
 const inviteesReducer = (state = [], action) => {
