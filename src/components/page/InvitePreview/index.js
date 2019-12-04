@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
+import InviteButtons from '../../display/InviteButtons'
 import appThunks from '../../../appThunks'
 
 const InvitePreviewPage = props => {
@@ -12,6 +13,11 @@ const InvitePreviewPage = props => {
     dispatch(appThunks.loadInvitee(code))
   }, [code, dispatch])
 
-  return <div>InvitePreviewPage: {code} : {invitee? invitee.name: ""}</div>
+  return (
+    <div>
+      InvitePreviewPage: {code} : {invitee ? invitee.name : ''}
+      <InviteButtons/>
+    </div>
+  )
 }
 export default InvitePreviewPage

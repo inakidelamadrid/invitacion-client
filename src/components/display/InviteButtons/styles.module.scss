@@ -1,0 +1,13 @@
+.buttonsWrapper{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  button{
+    cursor: default;
+    border: 1px solid gray;
+    width: 200px;
+    height: 50px;
+    margin: 5px 0;
+  }
+}
