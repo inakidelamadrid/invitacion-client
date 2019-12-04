@@ -2,12 +2,16 @@
 import React from 'react'
 import CustomButton from './CustomButton'
 import styles from './styles.module.scss'
-import values from 'lodash/values'
+import classNames from 'classnames'
 import mapValues from 'lodash/mapValues'
+import values from 'lodash/values'
 
 const InviteButtons = ({ currentState = 'pending' }) => {
   const buttonActions = {
-    accept: { text: 'Si ire', className: styles.buttonYes },
+    accept: {
+      text: 'Si ire',
+      className: classNames(styles.buttonYes, styles.pulse),
+    },
     reject: { text: 'No puedo ir', className: styles.buttonNo },
     maybe: { text: 'Tal vez ire', className: styles.buttonMaybe },
   }
