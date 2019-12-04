@@ -1,10 +1,21 @@
+@import "../../../styles/_variables";
+
 .page{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 12px;
+
+  @media #{sm}{
+    font-size: 14px;
+  }
+
+  @media #{$md} {
+    font-size: 16px;
+  }
 }
 
 .inviteeList{
   flex-grow: 2;
-  padding: 0 10px 0 20px;
+  padding: 0 $pad-1 0 $pad-2;
 }
