@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import styles from './styles.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard, faCogs } from '@fortawesome/free-solid-svg-icons'
+import Clipboard from 'react-clipboard.js'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import appThunks from '../../../appThunks'
 
@@ -47,7 +48,13 @@ const Invitee = ({ invitee }) => {
         {code ? (
           <>
             <button className={styles.inviteeActionBtn}>
-              <FontAwesomeIcon icon={faClipboard} />
+              <Clipboard
+                component="a"
+                button-href="#"
+                data-clipboard-text={`/invitees/preview/${code}`}
+              >
+                <FontAwesomeIcon icon={faClipboard} />
+              </Clipboard>
             </button>
             <a href={`/invitees/preview/${code}`}>Vista previa</a>
           </>
