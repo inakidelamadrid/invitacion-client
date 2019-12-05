@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
 import InviteButtons from '../../display/InviteButtons'
 import appThunks from '../../../appThunks'
+import { NOTSENT as INVITE_NOTSENT } from '../../../globals/constants/InviteStatus'
 
 const InvitePreviewPage = props => {
   const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const InvitePreviewPage = props => {
   const e_viteProps = invitee => {
     if (!invitee)
       return {
-        currentState: 'pending',
+        currentState: INVITE_NOTSENT,
         code: null,
       }
     return { currentState: invitee.e_vite.status, code: invitee.e_vite.code }

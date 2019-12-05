@@ -7,6 +7,7 @@ import classNames from 'classnames'
 import mapValues from 'lodash/mapValues'
 import values from 'lodash/values'
 import appThunks from '../../../appThunks'
+import { inviteStatusMap } from '../../../globals/constants/InviteStatus'
 
 const InviteButtons = ({ currentState = 'pending', code = null }) => {
   const dispatch = useDispatch()
@@ -27,13 +28,6 @@ const InviteButtons = ({ currentState = 'pending', code = null }) => {
       className: styles.buttonMaybe,
       disabled: currentState === 'maybe',
     },
-  }
-
-  const currentStateText = {
-    pending: 'Aun no respondes',
-    accepted: 'Si ire',
-    rejected: 'No puedo ir',
-    maybe: 'Tal vez ire',
   }
 
   const changeInviteStatus = action => {
@@ -66,7 +60,7 @@ const InviteButtons = ({ currentState = 'pending', code = null }) => {
 
   return (
     <div className={styles.buttonsWrapper}>
-      <div>Tu estado es: {currentStateText[currentState]}</div>
+      <div>Tu estado es: {inviteStatusMap[currentState]}</div>
       {buttons}
     </div>
   )

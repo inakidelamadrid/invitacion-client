@@ -5,17 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard, faCogs } from '@fortawesome/free-solid-svg-icons'
 import Clipboard from 'react-clipboard.js'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { inviteStatusMap } from '../../../globals/constants/InviteStatus'
 import appThunks from '../../../appThunks'
 
 const Invitee = ({ invitee }) => {
   const dispatch = useDispatch()
-  const inviteState = {
-    notsent: 'Invitacion no enviada',
-    pending: 'Invitacion enviada',
-    accepted: 'Si ire',
-    rejected: 'No puedo ir',
-    maybe: 'Tal vez ire',
-  }
 
   const code = invitee.e_vite && invitee.e_vite.code
 
@@ -40,7 +34,7 @@ const Invitee = ({ invitee }) => {
         {fbIcon}
         {invitee.facebook_path}
       </td>
-      <td>{inviteState[invitee.e_vite.status]}</td>
+      <td>{inviteStatusMap[invitee.e_vite.status]}</td>
       <td className={styles.cogsColumn}>
         <button className={styles.inviteeActionBtn} onClick={createInviteCode}>
           <FontAwesomeIcon icon={faCogs} />
