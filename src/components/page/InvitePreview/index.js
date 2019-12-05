@@ -13,12 +13,21 @@ const InvitePreviewPage = props => {
     dispatch(appThunks.loadInvitee(code))
   }, [code, dispatch])
 
+  const e_viteProps = invitee => {
+    if (!invitee)
+      return {
+        currentState: 'pending',
+        code: null,
+      }
+    return { currentState: invitee.e_vite.status, code: invitee.e_vite.code }
+  }
+
   return (
     <div>
       InvitePreviewPage: {code} : {invitee ? invitee.name : ''}
       {/* change state using redux */}
       {/* start changing invite status and make sure UI updates */}
-      <InviteButtons currentState={invitee ? invitee.e_vite.status : 'pending'}/>
+      <InviteButtons {...e_viteProps(invitee)} />
     </div>
   )
 }

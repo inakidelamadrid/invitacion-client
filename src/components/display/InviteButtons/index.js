@@ -1,12 +1,16 @@
 //@format
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import CustomButton from './CustomButton'
 import styles from './styles.module.scss'
 import classNames from 'classnames'
 import mapValues from 'lodash/mapValues'
 import values from 'lodash/values'
+import appThunks from '../../../appThunks'
 
-const InviteButtons = ({ currentState = 'pending' }) => {
+const InviteButtons = ({ currentState = 'pending', code = null }) => {
+  const dispatch = useDispatch()
+
   const buttonActions = {
     accept: {
       text: 'Si ire',
@@ -32,7 +36,17 @@ const InviteButtons = ({ currentState = 'pending' }) => {
     maybe: 'Tal vez ire',
   }
 
-  const changeInviteStatus = action => console.log(action)
+  const changeInviteStatus = action => {
+    const newStatus = {
+      accept: 'accepted',
+      reject: 'rejected',
+      maybe: 'maybe',
+    }[action]
+
+    if (code) {
+      dispatch(appThunks.changeEviteStatus(code, newStatus))
+    }
+  }
   const buttons = values(
     mapValues(buttonActions, (value, key) => {
       return (

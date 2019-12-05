@@ -6,6 +6,8 @@ const inviteeReducer = (state = null, action) => {
       // the api returns the data for the invitee and the e_vite normalized,
       // so we need to nest the objects
       return addEviteToInvitee(action.payload.invitee)
+    case 'UPDATE_INVITEE_EVITE':
+      return {...state, e_vite: action.payload.e_vite}
     default:
       return state
   }

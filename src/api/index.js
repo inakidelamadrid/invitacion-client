@@ -25,4 +25,4 @@ export const loadInvitee = eviteCode =>
   request.get(fullURI(`/invitees/usecode/${eviteCode}`))
 
 export const changeEviteStatus = (code, status) =>
-  request.put(fullURI(`/e_vites/change_status`))
+  request.put(fullURI(`/e_vites/change_status`)).send({ code, status })
