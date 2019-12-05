@@ -23,3 +23,6 @@ export const createEvite = inviteeId => {
 
 export const loadInvitee = eviteCode =>
   request.get(fullURI(`/invitees/usecode/${eviteCode}`))
+
+export const changeEviteStatus = (code, status) =>
+  request.put(fullURI(`/e_vites/change_status`))

@@ -1,8 +1,9 @@
 import { loadInvitee } from './invitee'
 import { createInvitee, loadInvitees } from './invitees'
-import { createEvite } from './e_vites'
+import { createEvite, changeStatus as changeEviteStatus } from './e_vites'
 
 const appThunks = {
+  changeEviteStatus,
   createEvite,
   createInvitee,
   loadInvitee,
