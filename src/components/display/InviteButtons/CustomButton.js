@@ -6,6 +6,7 @@ const CustomButton = ({
   children,
   className,
   currentState,
+  disabled,
   myAction,
 }) => {
   return (
@@ -13,6 +14,7 @@ const CustomButton = ({
       type="button"
       className={className}
       onClick={() => changeInviteStatus(myAction)}
+      disabled={disabled}
     >
       {children}
     </button>

@@ -11,9 +11,18 @@ const InviteButtons = ({ currentState = 'pending' }) => {
     accept: {
       text: 'Si ire',
       className: classNames(styles.buttonYes, styles.pulse),
+      disabled: currentState === 'accepted',
     },
-    reject: { text: 'No puedo ir', className: styles.buttonNo },
-    maybe: { text: 'Tal vez ire', className: styles.buttonMaybe },
+    reject: {
+      text: 'No puedo ir',
+      className: styles.buttonNo,
+      disabled: currentState === 'rejected',
+    },
+    maybe: {
+      text: 'Tal vez ire',
+      className: styles.buttonMaybe,
+      disabled: currentState === 'maybe',
+    },
   }
 
   const currentStateText = {
@@ -28,6 +37,7 @@ const InviteButtons = ({ currentState = 'pending' }) => {
     mapValues(buttonActions, (value, key) => {
       return (
         <CustomButton
+          disabled={value.disabled}
           key={key}
           myAction={key}
           currentState={currentState}
