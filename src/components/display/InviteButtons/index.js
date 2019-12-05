@@ -16,6 +16,13 @@ const InviteButtons = ({ currentState = 'pending' }) => {
     maybe: { text: 'Tal vez ire', className: styles.buttonMaybe },
   }
 
+  const currentStateText = {
+    pending: 'Aun no respondes',
+    accepted: 'Si ire',
+    rejected: 'No puedo ir',
+    maybe: 'Tal vez ire',
+  }
+
   const changeInviteStatus = action => console.log(action)
   const buttons = values(
     mapValues(buttonActions, (value, key) => {
@@ -33,7 +40,12 @@ const InviteButtons = ({ currentState = 'pending' }) => {
     })
   )
 
-  return <div className={styles.buttonsWrapper}>{buttons}</div>
+  return (
+    <div className={styles.buttonsWrapper}>
+      <div>Tu estado es: {currentStateText[currentState]}</div>
+      {buttons}
+    </div>
+  )
 }
 
 export default InviteButtons

@@ -16,6 +16,10 @@ const InvitePreviewPage = props => {
   return (
     <div>
       InvitePreviewPage: {code} : {invitee ? invitee.name : ''}
+      {/* setup story book to check changes in buttons */}
+      {/* code API to change invite status */ }
+      {/* pass invite down and change state using redux */}
+      {/* start changing invite status and make sure UI updates */}
       <InviteButtons/>
     </div>
   )
