@@ -17,23 +17,10 @@ const Invitee = ({ invitee }) => {
     dispatch(appThunks.createEvite(invitee.id))
   }
 
-  const fbIcon =
-    invitee.facebook_path.length > 0 ? (
-      <>
-        <FontAwesomeIcon icon={faFacebook} />
-        &nbsp;
-      </>
-    ) : (
-      ''
-    )
   return (
     <tr>
       <td>{invitee.name}</td>
       <td>{invitee.last_name}</td>
-      <td>
-        {fbIcon}
-        {invitee.facebook_path}
-      </td>
       <td>{inviteStatusMap[invitee.e_vite.status]}</td>
       <td className={styles.cogsColumn}>
         <button className={styles.inviteeActionBtn} onClick={createInviteCode}>
@@ -69,7 +56,6 @@ const InviteeList = ({ invitees }) => {
           <tr>
             <th>Nombre</th>
             <th>Apellido</th>
-            <th>Facebook</th>
             <th>Estado de invitacion</th>
             <th className={styles.cogsColumn}>Link de invitacion</th>
           </tr>
