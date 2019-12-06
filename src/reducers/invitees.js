@@ -1,7 +1,7 @@
 export const addEviteToInvitee = invitee => {
-  const { code, facebook_path, id, last_name, name, status } = invitee
+  const { code, id, last_name, name, status } = invitee
 
-  return { facebook_path, id, last_name, name, e_vite: { code, status } }
+  return { id, last_name, name, e_vite: { code, status } }
 }
 
 const inviteesReducer = (state = [], action) => {
@@ -13,7 +13,7 @@ const inviteesReducer = (state = [], action) => {
         return invitee
       })
     case 'APPEND_INVITEE':
-      return [...state, action.payload.invitee]
+      return [...state, addEviteToInvitee(action.payload.invitee)]
     case 'LOAD_INVITEES':
       // the api returns the data for the invitee and the e_vite normalized,
       // so we need to nest the objects
