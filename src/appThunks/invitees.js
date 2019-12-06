@@ -14,7 +14,6 @@ export const createInvitee = invitee => dispatch => {
   const body = {
     name: invitee.name,
     last_name: invitee.lastName,
-    facebook_path: invitee.facebookPath,
   }
   apiCreateInvitee(body).then(res => {
     const invitee = res.body
