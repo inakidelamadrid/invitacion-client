@@ -41,6 +41,7 @@ const InviteButtons = ({ currentState = 'pending', code = null }) => {
       dispatch(appThunks.changeEviteStatus(code, newStatus))
     }
   }
+
   const buttons = values(
     mapValues(buttonActions, (value, key) => {
       return (
