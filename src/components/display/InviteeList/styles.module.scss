@@ -4,6 +4,13 @@
   thead{
     text-align: left;
   }
+
+  tbody{
+    td{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
 }
 
 .cogsColumn{
@@ -18,4 +25,9 @@
   svg path{
     fill: #fff;
   }
+}
+
+
+.inviteePreview{
+  margin-left: 10px;
 }

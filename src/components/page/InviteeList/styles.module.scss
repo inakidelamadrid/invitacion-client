@@ -15,7 +15,12 @@
   }
 }
 
+.inviteeForm{
+  width: 38%;
+}
+
 .inviteeList{
+  width: 58%;
   flex-grow: 2;
   padding: 0 $pad-1 0 $pad-2;
 }

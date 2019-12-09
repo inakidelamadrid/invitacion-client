@@ -25,7 +25,7 @@ const InvitePreviewPage = props => {
 
   return (
     <div>
-      InvitePreviewPage: {code} : {invitee ? invitee.name : ''}
+      {invitee ? invitee.name : ''}
       {/* change state using redux */}
       {/* start changing invite status and make sure UI updates */}
       <InviteButtons {...e_viteProps(invitee)} />

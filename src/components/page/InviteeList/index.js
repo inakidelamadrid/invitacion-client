@@ -16,7 +16,7 @@ const InviteeListPage = props => {
 
   return (
     <div className={styles.page}>
-      <div>
+      <div className={styles.inviteeForm}>
         <InviteeForm addInvitee={appThunks.createInvitee} />
       </div>
       <div className={styles.inviteeList}>

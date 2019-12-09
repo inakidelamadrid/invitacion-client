@@ -4,7 +4,6 @@ import styles from './styles.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard, faCogs } from '@fortawesome/free-solid-svg-icons'
 import Clipboard from 'react-clipboard.js'
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { inviteStatusMap } from '../../../globals/constants/InviteStatus'
 import appThunks from '../../../appThunks'
 
@@ -23,9 +22,9 @@ const Invitee = ({ invitee }) => {
       <td>{invitee.last_name}</td>
       <td>{inviteStatusMap[invitee.e_vite.status]}</td>
       <td className={styles.cogsColumn}>
-        <button className={styles.inviteeActionBtn} onClick={createInviteCode}>
+        {/*<button className={styles.inviteeActionBtn} onClick={createInviteCode}>
           <FontAwesomeIcon icon={faCogs} />
-        </button>{' '}
+        </button>{' '}*/}
         {code ? (
           <>
             <button className={styles.inviteeActionBtn}>
@@ -37,7 +36,7 @@ const Invitee = ({ invitee }) => {
                 <FontAwesomeIcon icon={faClipboard} />
               </Clipboard>
             </button>
-            <a href={`/invitees/preview/${code}`}>Vista previa</a>
+            <a className={styles.inviteePreview} href={`/invitees/preview/${code}`}>Vista previa</a>
           </>
         ) : (
           ''
@@ -50,7 +49,6 @@ const Invitee = ({ invitee }) => {
 const InviteeList = ({ invitees }) => {
   return (
     <div className="inviteesListWrapper">
-      <h1> Invitados </h1>
       <table className={styles.inviteeTable}>
         <thead>
           <tr>
