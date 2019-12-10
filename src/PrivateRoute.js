@@ -1,8 +1,15 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, Redirect } from 'react-router'
+import { useSelector } from 'react-redux'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  return <Route {...rest} render={props => <Component {...props} />} />
+  const { logged } = useSelector(state => state.auth)
+  return (
+    <Route
+      {...rest}
+      render={props => (logged ? <Component {...props} /> : <Redirect to="" />)}
+    />
+  )
 }
 
 export default PrivateRoute
