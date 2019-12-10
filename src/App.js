@@ -10,6 +10,7 @@ import InviteDesign from './components/page/InviteDesign'
 import InviteeForm from './components/page/InviteeForm'
 import InviteeList from './components/page/InviteeList'
 import InvitePreview from './components/page/InvitePreview'
+import LoginPage from './components/page/Login'
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/invite/design" component={InviteDesign} />
         <Route path="/invitees/preview/:code" component={InvitePreview} />
         <Route path="/createInvite" component={InviteeForm} />
+
+        <Route path="/login" component={LoginPage} />
       </Switch>
     </div>
   )
