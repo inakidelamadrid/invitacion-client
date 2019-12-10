@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
+import { useWindowSize } from 'react-use'
 import { useSelector, useDispatch } from 'react-redux'
+import Confetti from 'react-confetti'
 import MickeyInvite from '../../display/MickeyInvite'
 import InviteButtons from '../../display/InviteButtons'
 import appThunks from '../../../appThunks'
@@ -10,6 +12,7 @@ import styles from './styles.module.scss'
 const InvitePreviewPage = props => {
   const dispatch = useDispatch()
   const invitee = useSelector(state => state.invitee)
+  const { width, height } = useWindowSize()
   const { code } = useParams()
 
   useEffect(() => {
@@ -27,6 +30,7 @@ const InvitePreviewPage = props => {
 
   return (
     <div className={styles.container}>
+      <Confetti width={width} height={height} />
       <MickeyInvite name={invitee ? invitee.name : ''} />
       <InviteButtons {...e_viteProps(invitee)} />
     </div>
