@@ -7,9 +7,9 @@ export const REJECTED = 'rejected'
 export const statuses = [ACCEPTED, MAYBE, NOTSENT, PENDING, REJECTED]
 
 export const inviteStatusMap = {
-  accepted: 'Si ire',
-  maybe: 'Tal vez ire',
+  accepted: 'Si iré',
+  maybe: 'Tal vez iré',
   notsent: 'Invitacion no enviada',
-  pending: 'Invitacion enviada',
+  pending: 'Invitación aún no respondida',
   rejected: 'No puedo ir',
 }

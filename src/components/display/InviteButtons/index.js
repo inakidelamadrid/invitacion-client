@@ -61,7 +61,8 @@ const InviteButtons = ({ currentState = 'pending', code = null }) => {
 
   return (
     <div className={styles.buttonsWrapper}>
-      <div>Tu estado es: {inviteStatusMap[currentState]}</div>
+      <div className={styles.inviteStatus}>{inviteStatusMap[currentState]}</div>
+
       {buttons}
     </div>
   )
