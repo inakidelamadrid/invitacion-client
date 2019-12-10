@@ -30,7 +30,12 @@ const InvitePreviewPage = props => {
 
   return (
     <div className={styles.container}>
-      <Confetti width={width} height={height} />
+      <Confetti
+        width={width}
+        height={height}
+        numberOfPieces={100}
+        colors={['#000000', '#f10b0b', '#b07a17']}
+      />
       <MickeyInvite name={invitee ? invitee.name : ''} />
       <InviteButtons {...e_viteProps(invitee)} />
     </div>
