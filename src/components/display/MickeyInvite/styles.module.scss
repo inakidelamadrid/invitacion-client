@@ -12,6 +12,17 @@ p {
   width: 200px;
   height: 200px;
   margin: 10px auto;
+  position: relative;
+}
+
+.birthdayNumber{
+  position: absolute;
+  font-weight: bold;
+  color: white;
+  font-family: 'waltographregular';
+  font-size: 70px;
+  top: 50px;
+  left: 84px;
 }
 
 .inviteDetails {

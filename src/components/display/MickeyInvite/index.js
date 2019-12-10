@@ -8,6 +8,7 @@ const InviteDesign = ({ name = 'Nacho' }) => {
     <div>
       <div className={styles.invite}>
         <div className={styles.mickeySilhouette}>
+          <div className={styles.birthdayNumber}>3</div>
           <MickeySilhouette />
         </div>
       </div>
@@ -31,7 +32,7 @@ const InviteDesign = ({ name = 'Nacho' }) => {
         </div>
         <div className={styles.dottedHorizontal}></div>
         <div className={styles.timeAndAddress}>
-          <p className={styles.timeat}>2 PM - ?</p>
+          <p className={styles.timeat}>2PM-7PM</p>
           <p className={styles.address}>López Rayón #23, Comala.</p>
         </div>
       </div>
