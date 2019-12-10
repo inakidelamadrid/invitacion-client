@@ -1,4 +1,5 @@
 import React from 'react'
+import PrivateRoute from './PrivateRoute'
 import { Route, Switch } from 'react-router'
 import logo from './logo.svg'
 import './App.css'
@@ -15,8 +16,8 @@ function App() {
     <div className="App container mx-auto px-4 py-2">
       <Switch>
         <Route exact path="/" component={HomePage}/>
-        <Route path="/admin" component={AdminPage} />
-        <Route exact path="/invitees" component={InviteeList} />
+        <PrivateRoute exact path="/admin" component={AdminPage} />
+        <PrivateRoute path="/admin/invitees" component={InviteeList} />
         <Route path="/invite/design" component={InviteDesign} />
         <Route path="/invitees/preview/:code" component={InvitePreview} />
         <Route path="/createInvite" component={InviteeForm} />
