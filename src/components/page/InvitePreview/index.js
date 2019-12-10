@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
+import MickeyInvite from '../../display/MickeyInvite'
 import InviteButtons from '../../display/InviteButtons'
 import appThunks from '../../../appThunks'
 import { NOTSENT as INVITE_NOTSENT } from '../../../globals/constants/InviteStatus'
+import styles from './styles.module.scss'
 
 const InvitePreviewPage = props => {
   const dispatch = useDispatch()
@@ -24,10 +26,8 @@ const InvitePreviewPage = props => {
   }
 
   return (
-    <div>
-      {invitee ? invitee.name : ''}
-      {/* change state using redux */}
-      {/* start changing invite status and make sure UI updates */}
+    <div className={styles.container}>
+      <MickeyInvite name={invitee ? invitee.name : ''} />
       <InviteButtons {...e_viteProps(invitee)} />
     </div>
   )

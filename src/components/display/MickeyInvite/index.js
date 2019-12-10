@@ -5,7 +5,7 @@ import MickeySilhouette from '../MickeySilhouette'
 
 const InviteDesign = ({ name = 'Nacho' }) => {
   return (
-    <div className={styles.inviteWrapper}>
+    <div>
       <div className={styles.invite}>
         <div className={styles.mickeySilhouette}>
           <MickeySilhouette />
