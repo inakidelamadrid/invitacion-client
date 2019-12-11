@@ -1,9 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styles from './styles.module.scss'
 
-//import logoImg from "../img/logo.jpg";
-//import { Card, Logo, Form, Input, Button } from '../components/AuthForms';
 
 function Login() {
   return (
