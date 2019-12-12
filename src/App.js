@@ -18,7 +18,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage}/>
         <PrivateRoute exact path="/admin" component={AdminPage} />
-        <PrivateRoute path="/admin/invitees" component={InviteeList} />
+        <PrivateRoute path="/admin/9e943a88-f140-4819-8c4f-e025e7414698/invitees" component={InviteeList} />
         <Route path="/invite/design" component={InviteDesign} />
         <Route path="/invitees/:code" component={InvitePreview} />
         <Route path="/createInvite" component={InviteeForm} />
