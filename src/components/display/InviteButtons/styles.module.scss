@@ -1,5 +1,13 @@
 @import '../../../styles/variables.scss';
 
+@mixin myButton($color) {
+  font-family: 'Montserrat', sans-serif;
+  background-color: $color;
+  &:hover {
+    background: darken($color, 10%);
+  }
+}
+
 .buttonsWrapper {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
@@ -33,35 +41,23 @@
       box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
       transform: translate3d(0, 1px, 0);
     }
-
-    &:disabled{
-      background-color: $seashell;     
-    }
   }
 }
 
-.buttonDisabled.buttonDisabled{
-  background-color: $seashell;     
+.buttonDisabled.buttonDisabled {
+  @include myButton($seashell);
 }
 
 .buttonYes.buttonYes {
-  font-family: 'Montserrat', sans-serif;
-  background-color: green;
-  &:hover {
-    background: darken(green, 10%);
-  }
+  @include myButton(green);
 }
 
 .buttonNo {
-  font-family: 'Montserrat', sans-serif;
-  color: red;
+  @include myButton(red);
 }
+
 .buttonMaybe.buttonMaybe {
-  font-family: 'Montserrat', sans-serif;
-  background-color: $mandalay;
-  &:hover {
-    background: darken($mandalay, 10%);
-  }
+  @include myButton($mandalay);
 }
 
 @keyframes pulse {
@@ -109,8 +105,7 @@
   }
 }
 
-
-.inviteStatus{
+.inviteStatus {
   text-align: center;
   border-bottom: 1px solid black;
 }
