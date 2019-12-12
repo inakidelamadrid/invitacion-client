@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const APIHOST = 'http://localhost:8000'
+const APIHOST = process.env.REACT_APP_API_HOST
 
 const fullURI = path => `${APIHOST}${path}`
 
