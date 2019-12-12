@@ -19,20 +19,32 @@ const InviteButtons = ({ currentState = 'pending', code = null }) => {
   const buttonActions = {
     accept: {
       text: 'Si ire',
-      className: classNames(
-        accepted ? styles.buttonDisabled : styles.buttonYes,
-        styles.pulse
-      ),
+      className: classNames({
+        [styles.pulse]: !accepted,
+        [styles.buttonDisabled]: accepted,
+        [styles.buttonWithTransition]: !accepted,
+        [styles.buttonYes]: !accepted,
+      }),
       disabled: accepted,
     },
+
     reject: {
       text: 'No puedo ir',
-      className: rejected ? styles.buttonDisabled : styles.buttonNo,
+      className: classNames({
+        [styles.buttonDisabled]: rejected,
+        [styles.buttonWithTransition]: !rejected,
+        [styles.buttonNo]: !rejected,
+      }),
       disabled: rejected,
     },
+
     maybe: {
       text: 'Tal vez ire',
-      className: maybe ? styles.buttonMaybe : styles.buttonMaybe,
+      className: classNames({
+        [styles.buttonDisabled]: maybe,
+        [styles.buttonWithTransition]: !maybe,
+        [styles.buttonMaybe]: !maybe,
+      }),
       disabled: maybe,
     },
   }
