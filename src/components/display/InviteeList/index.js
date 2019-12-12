@@ -1,20 +1,19 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import styles from './styles.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClipboard, faCogs } from '@fortawesome/free-solid-svg-icons'
+import { faClipboard } from '@fortawesome/free-solid-svg-icons'
 import Clipboard from 'react-clipboard.js'
 import { inviteStatusMap } from '../../../globals/constants/InviteStatus'
-import appThunks from '../../../appThunks'
+//import appThunks from '../../../appThunks'
 
 const Invitee = ({ invitee }) => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const code = invitee.e_vite && invitee.e_vite.code
 
-  const createInviteCode = () => {
-    dispatch(appThunks.createEvite(invitee.id))
-  }
+  //const createInviteCode = () => {
+  //dispatch(appThunks.createEvite(invitee.id))
+  //}
 
   return (
     <tr>
@@ -31,12 +30,17 @@ const Invitee = ({ invitee }) => {
               <Clipboard
                 component="a"
                 button-href="#"
-                data-clipboard-text={`/invitees/preview/${code}`}
+                data-clipboard-text={`${process.env.REACT_APP_HOST}/invitees/${code}`}
               >
                 <FontAwesomeIcon icon={faClipboard} />
               </Clipboard>
             </button>
-            <a className={styles.inviteePreview} href={`/invitees/preview/${code}`}>Vista previa</a>
+            <a
+              className={styles.inviteePreview}
+              href={`/invitees/${code}`}
+            >
+              Vista previa
+            </a>
           </>
         ) : (
           ''

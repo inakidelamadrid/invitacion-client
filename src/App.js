@@ -1,7 +1,7 @@
 import React from 'react'
 import PrivateRoute from './PrivateRoute'
 import { Route, Switch } from 'react-router'
-import logo from './logo.svg'
+//import logo from './logo.svg'
 import './App.css'
 
 import AdminPage from './components/page/AdminPage'
@@ -20,7 +20,7 @@ function App() {
         <PrivateRoute exact path="/admin" component={AdminPage} />
         <PrivateRoute path="/admin/invitees" component={InviteeList} />
         <Route path="/invite/design" component={InviteDesign} />
-        <Route path="/invitees/preview/:code" component={InvitePreview} />
+        <Route path="/invitees/:code" component={InvitePreview} />
         <Route path="/createInvite" component={InviteeForm} />
 
         <Route path="/login" component={LoginPage} />
