@@ -12,21 +12,28 @@ import { inviteStatusMap } from '../../../globals/constants/InviteStatus'
 const InviteButtons = ({ currentState = 'pending', code = null }) => {
   const dispatch = useDispatch()
 
+  const accepted = currentState === 'accepted'
+  const rejected = currentState === 'rejected'
+  const maybe = currentState === 'maybe'
+
   const buttonActions = {
     accept: {
       text: 'Si ire',
-      className: classNames(styles.buttonYes, styles.pulse),
-      disabled: currentState === 'accepted',
+      className: classNames(
+        accepted ? styles.buttonDisabled : styles.buttonYes,
+        styles.pulse
+      ),
+      disabled: accepted,
     },
     reject: {
       text: 'No puedo ir',
-      className: styles.buttonNo,
-      disabled: currentState === 'rejected',
+      className: rejected ? styles.buttonDisabled : styles.buttonNo,
+      disabled: rejected,
     },
     maybe: {
       text: 'Tal vez ire',
-      className: styles.buttonMaybe,
-      disabled: currentState === 'maybe',
+      className: maybe ? styles.buttonMaybe : styles.buttonMaybe,
+      disabled: maybe,
     },
   }
 

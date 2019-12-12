@@ -22,16 +22,26 @@
     text-decoration: none;
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     will-change: transform;
+
     &:hover {
       background: darken(#c06c84, 10%);
       box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
       transform: translate3d(0, -2px, 0);
     }
+
     &:active {
       box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
       transform: translate3d(0, 1px, 0);
     }
+
+    &:disabled{
+      background-color: $seashell;     
+    }
   }
+}
+
+.buttonDisabled.buttonDisabled{
+  background-color: $seashell;     
 }
 
 .buttonYes.buttonYes {
