@@ -30,14 +30,14 @@ const Invitee = ({ invitee }) => {
               <Clipboard
                 component="a"
                 button-href="#"
-                data-clipboard-text={`${process.env.REACT_APP_HOST}/invitees/preview/${code}`}
+                data-clipboard-text={`${process.env.REACT_APP_HOST}/invitees/${code}`}
               >
                 <FontAwesomeIcon icon={faClipboard} />
               </Clipboard>
             </button>
             <a
               className={styles.inviteePreview}
-              href={`/invitees/preview/${code}`}
+              href={`/invitees/${code}`}
             >
               Vista previa
             </a>
