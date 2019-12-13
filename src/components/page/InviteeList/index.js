@@ -3,6 +3,7 @@ import isEmpty from 'lodash/isEmpty'
 import { useSelector, useDispatch } from 'react-redux'
 import appThunks from '../../../appThunks'
 import InviteeList from '../../display/InviteeList'
+import InviteeFilter from '../../display/InviteeFilter'
 import InviteeForm from '../../display/InviteeForm'
 import styles from './styles.module.scss'
 
@@ -19,7 +20,9 @@ const InviteeListPage = props => {
       <div className={styles.inviteeForm}>
         <InviteeForm addInvitee={appThunks.createInvitee} />
       </div>
+
       <div className={styles.inviteeList}>
+        <InviteeFilter />
         {isEmpty(invitees) ? (
           <div>Loading</div>
         ) : (
