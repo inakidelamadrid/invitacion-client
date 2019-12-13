@@ -4,7 +4,11 @@ const APIHOST = process.env.REACT_APP_API_HOST
 
 const fullURI = path => `${APIHOST}${path}`
 
-export const loadInvitees = () => request.get(fullURI('/invitees/'))
+export const loadInvitees = ({ query }) => {
+  let req = request.get(fullURI('/invitees/'))
+  if (query) return req.query(query)
+  return req
+}
 
 export const createInvitee = invitee => {
   const { name, last_name, facebook_path } = invitee

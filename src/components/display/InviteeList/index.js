@@ -6,7 +6,7 @@ import Clipboard from 'react-clipboard.js'
 import { inviteStatusMap } from '../../../globals/constants/InviteStatus'
 //import appThunks from '../../../appThunks'
 
-const Invitee = ({ invitee }) => {
+const Invitee = ({ invitee, index }) => {
   // const dispatch = useDispatch()
 
   const code = invitee.e_vite && invitee.e_vite.code
@@ -17,6 +17,7 @@ const Invitee = ({ invitee }) => {
 
   return (
     <tr>
+      <td>{index}</td>
       <td>{invitee.name}</td>
       <td>{invitee.last_name}</td>
       <td>{inviteStatusMap[invitee.e_vite.status]}</td>
@@ -56,6 +57,7 @@ const InviteeList = ({ invitees }) => {
       <table className={styles.inviteeTable}>
         <thead>
           <tr>
+            <th></th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Estado de invitacion</th>
@@ -64,7 +66,7 @@ const InviteeList = ({ invitees }) => {
         </thead>
         <tbody>
           {invitees.map((invitee, index) => (
-            <Invitee key={index} invitee={invitee} />
+            <Invitee key={index} invitee={invitee} index={index + 1}/>
           ))}
         </tbody>
       </table>
