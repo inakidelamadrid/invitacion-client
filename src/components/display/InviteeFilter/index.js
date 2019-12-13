@@ -20,7 +20,7 @@ const InviteeFilter = ({ initial = PENDING, updateFunction, dispatch }) => {
     const status = event.target.value
     setStatus(status)
     if (updateFunction && dispatch) {
-      console.log(' I will dispatch')
+      dispatch(updateFunction({ query: { status } }))
     }
   }
 
