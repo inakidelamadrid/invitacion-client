@@ -22,7 +22,10 @@ const InviteeListPage = props => {
       </div>
 
       <div className={styles.inviteeList}>
-        <InviteeFilter />
+        <InviteeFilter
+          updateFunction={appThunks.loadInvitees}
+          dispatch={dispatch}
+        />
         {isEmpty(invitees) ? (
           <div>Loading</div>
         ) : (

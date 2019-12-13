@@ -1,8 +1,13 @@
-import React from 'react'
-import { inviteStatusMap } from '../../../globals/constants/InviteStatus'
+import React, { useState } from 'react'
+import {
+  inviteStatusMap,
+  PENDING,
+} from '../../../globals/constants/InviteStatus'
 import reduce from 'lodash/reduce'
 
-const InviteeFilter = props => {
+const InviteeFilter = ({ initial = PENDING, updateFunction, dispatch }) => {
+  const [status, setStatus] = useState(initial)
+
   const options = reduce(
     inviteStatusMap,
     (acc, value, key) => {
@@ -10,8 +15,17 @@ const InviteeFilter = props => {
     },
     []
   )
+
+  const changeStatus = event => {
+    const status = event.target.value
+    setStatus(status)
+    if (updateFunction && dispatch) {
+      console.log(' I will dispatch')
+    }
+  }
+
   return (
-    <select>
+    <select value={status} onChange={changeStatus}>
       {options.map((opt, index) => (
         <option value={opt.value} key={index}>
           {opt.text}
